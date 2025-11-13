@@ -1,0 +1,489 @@
+{
+  "ru": {
+    "site": {
+      "title": "ООО НПП МоторПро - Бесколлекторные двигатели для БПЛА"
+    },
+    "nav": {
+      "brand": "МоторПро",
+      "problem": "Проблема",
+      "product": "Продукт",
+      "market": "Рынок",
+      "competitors": "Конкуренты",
+      "technology": "Технологии",
+      "results": "Результаты",
+      "team": "Команда",
+      "contacts": "Контакты"
+    },
+    "hero": {
+      "title": "ООО НПП «МоторПро»",
+      "subtitle": "Мы помогаем БПЛА летать",
+      "description": "Создаем малоразмерные бесколлекторные двигатели постоянного тока",
+      "cta": "Узнать больше",
+      "contact_person": "Кудрявцев Роман Алексеевич",
+      "phone": "Телефон",
+      "email": "Email",
+      "phone_number": "+7 (905) 634-04-63",
+      "email_address": "motor.pro@list.ru"
+    },
+    "problem": {
+      "title": "ПРОБЛЕМА",
+      "description": "Увеличение рыночного спроса на малогабаритные БПЛА влечёт за собой необходимость увеличивать объём выпуска микроприводной техники для управления винтами БПЛА. Существует несколько основных сдерживающих факторов для удовлетворения спроса на микроприводную технику в РФ:",
+      "sanctions": "1. Санкции при закупках",
+      "logistics": "2. Логистические сложности",
+      "no_analogs": "3. Отсутствие отечественных аналогов",
+      "items": []
+    },
+    "product": {
+      "title": "ОПИСАНИЕ КОНЕЧНОГО ПРОДУКТА",
+      "specs": "ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ",
+      "applications": "ОБЛАСТЬ ПРИМЕНЕНИЯ",
+      "aviation": "Авиационная и беспилотная авиационная техника",
+      "space": "Космическая техника",
+      "rockets": "Ракетостроение",
+      "robotics": "Робототехника",
+      "medical": "Медицинская техника",
+      "dimensions": "Размеры (Вт×L)",
+      "weight": "Масса",
+      "voltage": "Рабочее напряжение",
+      "speed": "Скорость вращения",
+      "power": "Мощность",
+      "torque": "Крутящий момент",
+      "efficiency": "КПД"
+    },
+    "products": [
+      {
+        "id": "motor-1",
+        "name": "Продукт №1",
+        "dimensions": "30х30 мм",
+        "weight": "210 г",
+        "voltage": "36 В",
+        "speed": "45000 об/мин",
+        "power": "180 Вт",
+        "torque": "≥ 40 мН·м",
+        "efficiency": "85-90 %"
+      }
+    ],
+    "market": {
+      "title": "РЫНОК И ПОТРЕБИТЕЛЬ",
+      "growth": "Среднегодовой рост рынка БПЛА",
+      "volume": "Объём гражданского сектора БПЛА в РФ (2023)",
+      "per_year": "в год",
+      "billion_rubles": "млрд рублей"
+    },
+    "competitors": {
+      "title": "АНАЛОГИ И КОНКУРЕНТЫ",
+      "parameter": "Параметр",
+      "our_product": "Наш продукт",
+      "analog1": "Аналог 1",
+      "analog2": "Аналог 2",
+      "analog3": "Аналог 3",
+      "power": "Мощность (Вт)",
+      "efficiency": "КПД (%)",
+      "speed": "Скорость (об/мин)",
+      "price": "Цена (руб)"
+    },
+    "technology": {
+      "title": "ТЕХНОЛОГИЧЕСКИЕ ПРЕИМУЩЕСТВА",
+      "magnetic": "Магнитная система",
+      "magnetic_desc": "Обеспечивает необходимое внешнее магнитное поле в условиях малых геометрических размеров",
+      "magnets": "Постоянные магниты",
+      "magnets_desc": "Изготовлены методом напыления, обеспечивающей более высокие эксплуатационные характеристики",
+      "windings": "Планарные обмотки",
+      "windings_desc": "Требуют меньшего количества витков и занимают меньший объем, лучше работают на высоких частотах"
+    },
+    "results": {
+      "title": "ТЕКУЩИЕ РЕЗУЛЬТАТЫ",
+      "trl": "Уровень готовности TRL 3",
+      "model": "Создана математическая модель БДПТ в Matlab",
+      "analysis": "Проведен анализ рынка, составлена дорожная карта",
+      "startup": "Подана заявка на программу \"Студенческий стартап\"",
+      "letter": "Получено письмо о намерениях от компании COO «METICO»"
+    },
+    "team": {
+      "title": "КОМАНДА",
+      "designer": "Инженер-конструктор",
+      "designer_desc": "Твердотельное моделирование, выпуск А1, согласно требованиям ЕСКД",
+      "electronics": "Инженер-электроник",
+      "electronics_desc": "Разработка электрических решений",
+      "materials": "Инженер-материаловед",
+      "materials_desc": "Выбор материалов",
+      "accountant": "Бухгалтер",
+      "accountant_desc": "Ведение бухгалтерского учета, составление финансового отчета"
+    },
+    "finance": {
+      "title": "ФИНАНСОВЫЙ ПЛАН",
+      "expenses": "ИНВЕСТИЦИОННЫЕ РАСХОДЫ",
+      "investments": "ПРИВЛЕЧЕНИЕ ИНВЕСТИЦИЙ",
+      "registration": "Регистрация юридического лица",
+      "organization": "Организация работы 4 человек",
+      "intellectual": "Подача заявки на интеллектуальную собственность",
+      "total": "Итого",
+      "stage1": "Первый этап",
+      "stage2": "Второй этап (программа \"СТАРТ\")"
+    },
+    "contacts": {
+      "title": "КОНТАКТЫ",
+      "company": "ООО НПП «МоторПро»",
+      "slogan": "Мы помогаем БПЛА летать",
+      "contact_person": "Кудрявцев Роман Алексеевич",
+      "phone": "Телефон",
+      "email": "Email",
+      "phone_number": "+7 (905) 634-04-63",
+      "email_address": "motor.pro@list.ru"
+    },
+    "footer": {
+      "copyright": "© 2024 ООО НПП «МоторПро». Все права защищены."
+    },
+    "currency": {
+      "rub": "руб"
+    },
+    "units": {
+      "mm": "мм",
+      "grams": "г",
+      "volts": "В",
+      "rpm": "об/мин",
+      "watts": "Вт",
+      "millinewton_meters": "мН·м",
+      "percent": "%"
+    },
+    "sponsors": {
+      "title": "При поддержке:"
+    },
+    "charts": {
+      "market_growth": "Динамика роста рынка БПЛА в РФ 2020-2024",
+      "efficiency_map": "Карта эффективности модели БДПТ"
+    },
+    "form": {
+      "title": "Свяжитесь с нами",
+      "name": "Имя",
+      "email": "Email",
+      "company": "Компания",
+      "message": "Сообщение",
+      "submit": "Отправить сообщение"
+    }
+  },
+  "en": {
+    "site": {
+      "title": "MotorPro LLC - Brushless DC Motors for UAV"
+    },
+    "nav": {
+      "brand": "MotorPro",
+      "problem": "Problem",
+      "product": "Product",
+      "market": "Market",
+      "competitors": "Competitors",
+      "technology": "Technologies",
+      "results": "Results",
+      "team": "Team",
+      "contacts": "Contacts"
+    },
+    "hero": {
+      "title": "MotorPro R&D Company",
+      "subtitle": "We help UAVs fly",
+      "description": "Developing compact brushless DC motors",
+      "cta": "Learn more",
+      "contact_person": "Roman Kudryavtsev",
+      "phone": "Phone",
+      "email": "Email",
+      "phone_number": "+7 (905) 634-04-63",
+      "email_address": "motor.pro@list.ru"
+    },
+    "problem": {
+      "title": "PROBLEM",
+      "description": "The growing market demand for compact UAVs necessitates increasing the production volume of micro-drive technology for UAV propeller control. There are several main constraining factors for meeting the demand for micro-drive technology in Russia:",
+      "sanctions": "1. Sanctions in procurement",
+      "logistics": "2. Logistical complexities",
+      "no_analogs": "3. Lack of domestic analogs"
+    },
+    "product": {
+      "title": "FINAL PRODUCT DESCRIPTION",
+      "specs": "TECHNICAL SPECIFICATIONS",
+      "applications": "APPLICATION AREAS",
+      "aviation": "Aviation and unmanned aviation technology",
+      "space": "Space technology",
+      "rockets": "Rocket engineering",
+      "robotics": "Robotics",
+      "medical": "Medical technology",
+      "dimensions": "Dimensions (W×L)",
+      "weight": "Weight",
+      "voltage": "Operating voltage",
+      "speed": "Rotation speed",
+      "power": "Power",
+      "torque": "Torque",
+      "efficiency": "Efficiency"
+    },
+    "products": [
+      {
+        "id": "motor-1",
+        "name": "Brushless DC Motor BLDC-30",
+        "dimensions": "30×30 mm",
+        "weight": "210 g",
+        "voltage": "36 V",
+        "speed": "45000 RPM",
+        "power": "180 W",
+        "torque": "≥ 40 mN·m",
+        "efficiency": "85-90 %"
+      }
+    ],
+    "market": {
+      "title": "MARKET AND CONSUMER",
+      "growth": "Average annual UAV market growth",
+      "volume": "Civil UAV sector volume in Russia (2023)",
+      "per_year": "per year",
+      "billion_rubles": "billion rubles"
+    },
+    "competitors": {
+      "title": "ANALOGS AND COMPETITORS",
+      "parameter": "Parameter",
+      "our_product": "Our product",
+      "analog1": "Analog 1",
+      "analog2": "Analog 2",
+      "analog3": "Analog 3",
+      "power": "Power (W)",
+      "efficiency": "Efficiency (%)",
+      "speed": "Speed (RPM)",
+      "price": "Price (RUB)"
+    },
+    "technology": {
+      "title": "TECHNOLOGICAL ADVANTAGES",
+      "magnetic": "Magnetic system",
+      "magnetic_desc": "Provides the necessary external magnetic field under small geometric dimensions",
+      "magnets": "Permanent magnets",
+      "magnets_desc": "Manufactured by spraying method, providing higher operational characteristics",
+      "windings": "Planar windings",
+      "windings_desc": "Require fewer turns and occupy less volume, work better at high frequencies"
+    },
+    "results": {
+      "title": "CURRENT RESULTS",
+      "trl": "Technology Readiness Level TRL 3",
+      "model": "Mathematical model of BLDC motor created in Matlab",
+      "analysis": "Market analysis conducted, roadmap developed",
+      "startup": "Application submitted for \"Student Startup\" program",
+      "letter": "Letter of intent received from COO \"METICO\" company"
+    },
+    "team": {
+      "title": "TEAM",
+      "designer": "Design Engineer",
+      "designer_desc": "Solid modeling, A1 release, according to ESKD requirements",
+      "electronics": "Electronics Engineer",
+      "electronics_desc": "Development of electrical solutions",
+      "materials": "Materials Engineer",
+      "materials_desc": "Material selection",
+      "accountant": "Accountant",
+      "accountant_desc": "Accounting, financial reporting"
+    },
+    "finance": {
+      "title": "FINANCIAL PLAN",
+      "expenses": "INVESTMENT EXPENSES",
+      "investments": "INVESTMENT ATTRACTION",
+      "registration": "Legal entity registration",
+      "organization": "Organization of work for 4 people",
+      "intellectual": "Filing for intellectual property",
+      "total": "Total",
+      "stage1": "First stage",
+      "stage2": "Second stage (START program)"
+    },
+    "contacts": {
+      "title": "CONTACTS",
+      "company": "MotorPro R&D Company",
+      "slogan": "We help UAVs fly",
+      "contact_person": "Roman Kudryavtsev",
+      "phone": "Phone",
+      "email": "Email",
+      "phone_number": "+7 (905) 634-04-63",
+      "email_address": "motor.pro@list.ru"
+    },
+    "footer": {
+      "copyright": "© 2024 MotorPro LLC. All rights reserved."
+    },
+    "currency": {
+      "rub": "RUB"
+    },
+    "units": {
+      "mm": "mm",
+      "grams": "g",
+      "volts": "V",
+      "rpm": "RPM",
+      "watts": "W",
+      "millinewton_meters": "mN·m",
+      "percent": "%"
+    },
+    "charts": {
+      "market_growth": "UAV Market Growth Dynamics in Russia 2020-2024",
+      "efficiency_map": "BLDC Motor Model Efficiency Map"
+    },
+    "sponsors": {
+      "title": "With the support of:"
+    },
+    "form": {
+      "title": "Contact us",
+      "name": "Your name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send a message"
+    }
+  },
+  "zh": {
+    "site": {
+      "title": "MotorPro有限责任公司 - 无人机无刷直流电机"
+    },
+    "nav": {
+      "brand": "MotorPro",
+      "problem": "问题",
+      "product": "产品",
+      "market": "市场",
+      "competitors": "竞争对手",
+      "technology": "技术",
+      "results": "成果",
+      "team": "团队",
+      "contacts": "联系方式"
+    },
+    "hero": {
+      "title": "MotorPro研发公司",
+      "subtitle": "我们帮助无人机飞行",
+      "description": "开发紧凑型无刷直流电机",
+      "cta": "了解更多",
+      "contact_person": "Roman Kudryavtsev",
+      "phone": "电话",
+      "email": "邮箱",
+      "phone_number": "+7 (905) 634-04-63",
+      "email_address": "motor.pro@list.ru"
+    },
+    "problem": {
+      "title": "问题",
+      "description": "对紧凑型无人机日益增长的市场需求需要增加用于无人机螺旋桨控制的微驱动技术的产量。在俄罗斯满足微驱动技术需求有几个主要制约因素：",
+      "sanctions": "1. 采购制裁",
+      "logistics": "2. 物流复杂性",
+      "no_analogs": "3. 缺乏国内类似产品"
+    },
+    "product": {
+      "title": "最终产品描述",
+      "specs": "技术规格",
+      "applications": "应用领域",
+      "aviation": "航空和无人航空技术",
+      "space": "航天技术",
+      "rockets": "火箭工程",
+      "robotics": "机器人技术",
+      "medical": "医疗技术",
+      "dimensions": "尺寸 (宽×长)",
+      "weight": "重量",
+      "voltage": "工作电压",
+      "speed": "转速",
+      "power": "功率",
+      "torque": "扭矩",
+      "efficiency": "效率"
+    },
+    "products": [
+      {
+        "id": "motor-1",
+        "name": "无刷直流电机 BLDC-30",
+        "dimensions": "30×30 毫米",
+        "weight": "210 克",
+        "voltage": "36 伏",
+        "speed": "45000 转/分",
+        "power": "180 瓦",
+        "torque": "≥ 40 毫牛·米",
+        "efficiency": "85-90 %"
+      }
+    ],
+    "market": {
+      "title": "市场与消费者",
+      "growth": "无人机市场年均增长率",
+      "volume": "俄罗斯民用无人机领域规模（2023年）",
+      "per_year": "每年",
+      "billion_rubles": "十亿卢布"
+    },
+    "competitors": {
+      "title": "类似产品与竞争对手",
+      "parameter": "参数",
+      "our_product": "我们的产品",
+      "analog1": "类似产品1",
+      "analog2": "类似产品2",
+      "analog3": "类似产品3",
+      "power": "功率 (瓦)",
+      "efficiency": "效率 (%)",
+      "speed": "速度 (转/分)",
+      "price": "价格 (卢布)"
+    },
+    "technology": {
+      "title": "技术优势",
+      "magnetic": "磁系统",
+      "magnetic_desc": "在小几何尺寸条件下提供必要的外部磁场",
+      "magnets": "永磁体",
+      "magnets_desc": "采用喷涂方法制造，提供更高的运行特性",
+      "windings": "平面绕组",
+      "windings_desc": "需要更少的匝数，占用更小的体积，在高频下工作更好"
+    },
+    "results": {
+      "title": "当前成果",
+      "trl": "技术就绪水平 TRL 3",
+      "model": "在Matlab中创建了BLDC电机的数学模型",
+      "analysis": "进行了市场分析，制定了路线图",
+      "startup": "已提交\"学生创业\"计划申请",
+      "letter": "收到COO \"METICO\"公司的意向书"
+    },
+    "team": {
+      "title": "团队",
+      "designer": "设计工程师",
+      "designer_desc": "实体建模，A1发布，符合ESKD要求",
+      "electronics": "电子工程师",
+      "electronics_desc": "电气解决方案开发",
+      "materials": "材料工程师",
+      "materials_desc": "材料选择",
+      "accountant": "会计师",
+      "accountant_desc": "会计核算，财务报表"
+    },
+    "finance": {
+      "title": "财务计划",
+      "expenses": "投资支出",
+      "investments": "投资吸引",
+      "registration": "法人实体注册",
+      "organization": "4人工作组织",
+      "intellectual": "知识产权申请",
+      "total": "总计",
+      "stage1": "第一阶段",
+      "stage2": "第二阶段（START计划）"
+    },
+    "contacts": {
+      "title": "联系方式",
+      "company": "MotorPro研发公司",
+      "slogan": "我们帮助无人机飞行",
+      "contact_person": "Roman Kudryavtsev",
+      "phone": "电话",
+      "email": "邮箱",
+      "phone_number": "+7 (905) 634-04-63",
+      "email_address": "motor.pro@list.ru"
+    },
+    "footer": {
+      "copyright": "© 2024 MotorPro有限责任公司。保留所有权利。"
+    },
+    "currency": {
+      "rub": "卢布"
+    },
+    "units": {
+      "mm": "毫米",
+      "grams": "克",
+      "volts": "伏",
+      "rpm": "转/分",
+      "watts": "瓦",
+      "millinewton_meters": "毫牛·米",
+      "percent": "%"
+    },
+    "charts": {
+      "market_growth": "俄罗斯无人机市场增长动态 2020-2024",
+      "efficiency_map": "BLDC电机模型效率图"
+    },
+    "sponsors": {
+      "title": "在:"
+    },
+    "form": {
+      "title": "联络我们",
+      "name": "你的名字",
+      "email": "电邮",
+      "company": "公司",
+      "message": "信息",
+      "submit": "发送信息"
+    }
+  }
+}

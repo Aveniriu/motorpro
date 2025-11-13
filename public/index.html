@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="description" content="ООО НПП «МоторПро» — разработка бесколлекторных двигателей для БПЛА. Технологии, продукт, команда.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="site.title">ООО НПП МоторПро - Бесколлекторные двигатели для БПЛА</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка с навигацией -->
+    <header class="header">
+        <nav class="nav navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#hero" data-i18n="nav.brand">МоторПро</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="#problem" data-i18n="nav.problem">Проблема</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#product" data-i18n="nav.product">Продукт</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#competitors" data-i18n="nav.competitors">Конкуренты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#technology" data-i18n="nav.technology">Технологии</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#results" data-i18n="nav.results">Результаты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team" data-i18n="nav.team">Команда</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
+                    </ul>
+                    <div class="lang-switcher">
+                        <button class="btn btn-outline-light btn-sm" data-lang="ru">RU</button>
+                        <button class="btn btn-outline-light btn-sm" data-lang="en">EN</button>
+                        <button class="btn btn-outline-light btn-sm" data-lang="zh">中文</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero секция -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-8">
+                        <h1 class="hero-title" data-i18n="hero.title">ООО НПП «МоторПро»</h1>
+                        <p class="hero-subtitle" data-i18n="hero.subtitle">Мы помогаем БПЛА летать</p>
+                        <p class="hero-description" data-i18n="hero.description">Создаем малоразмерные бесколлекторные двигатели постоянного тока</p>
+                        <div class="hero-contacts mt-4">
+                            <p class="mb-1"><strong data-i18n="hero.contact_person">Кудрявцев Роман Алексеевич</strong></p>
+                            <p class="mb-1"><strong data-i18n="hero.phone">Телефон:</strong></p>
+                            <p class="mb-1" data-i18n="hero.phone_number">+7 (905) 634-04-63</p>
+                            <p class="mb-1"><strong data-i18n="hero.email">Email:</strong></p>
+                            <p class="mb-1" data-i18n="hero.email_address">motor.pro@list.ru</p>
+                        </div>
+                        <button class="btn btn-light btn-lg mt-4 cta-button" data-i18n="hero.cta">Узнать больше</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Проблема -->
+        <section id="problem" class="section-py">
+            <div class="container">
+                <h2 class="section-title" data-i18n="problem.title">ПРОБЛЕМА</h2>
+                <p class="section-text" data-i18n="problem.description">Увеличение рыночного спроса на малогабаритные БПЛА влечёт за собой необходимость увеличивать объём выпуска микроприводной техники для управления винтами БПЛА. Существует несколько основных сдерживающих факторов для удовлетворения спроса на микроприводную технику в РФ:</p>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="problem-card">
+                            <h4 data-i18n="problem.sanctions">1. Санкции при закупках</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="problem-card">
+                            <h4 data-i18n="problem.logistics">2. Логистические сложности</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="problem-card">
+                            <h4 data-i18n="problem.no_analogs">3. Отсутствие отечественных аналогов</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Секция Продукт -->
+<section id="product" class="section-py bg-light">
+    <div class="container">
+        <h2 class="section-title" data-i18n="product.title">ОПИСАНИЕ КОНЕЧНОГО ПРОДУКТА</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- Слайдер продуктов -->
+                <div class="product-slider">
+                    <div class="slider-container" id="slider-container">
+                        <!-- Слайды будут здесь -->
+                    </div>
+                    <div class="slider-nav">
+                        <button class="slider-btn" id="prev-btn">←</button>
+                        <div class="slider-dots" id="slider-dots"></div>
+                        <button class="slider-btn" id="next-btn">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h4 data-i18n="product.applications">ОБЛАСТЬ ПРИМЕНЕНИЯ</h4>
+                <ul class="application-list">
+                    <li data-i18n="product.aviation">Авиационная и беспилотная авиационная техника</li>
+                    <li data-i18n="product.space">Космическая техника</li>
+                    <li data-i18n="product.rockets">Ракетостроение</li>
+                    <li data-i18n="product.robotics">Робототехника</li>
+                    <li data-i18n="product.medical">Медицинская техника</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Секция Конкуренты -->
+        <section id="competitors" class="section-py bg-light">
+            <div class="container">
+                <h2 class="section-title" data-i18n="competitors.title">АНАЛОГИ И КОНКУРЕНТЫ</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th data-i18n="competitors.parameter">Параметр</th>
+                                <th data-i18n="competitors.our_product">Наш продукт</th>
+                                <th data-i18n="competitors.analog1">Аналог 1</th>
+                                <th data-i18n="competitors.analog2">Аналог 2</th>
+                                <th data-i18n="competitors.analog3">Аналог 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-i18n="competitors.power">Мощность (Вт)</td>
+                                <td>180</td>
+                                <td>142.9</td>
+                                <td>182.64</td>
+                                <td>172.8</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="competitors.efficiency">КПД (%)</td>
+                                <td>85-90</td>
+                                <td>88.5</td>
+                                <td>88.5</td>
+                                <td>81</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="competitors.speed">Скорость (об/мин)</td>
+                                <td>45000</td>
+                                <td>28460</td>
+                                <td>30650</td>
+                                <td>27000</td>
+                            </tr>
+                            <tr>
+                                <td data-i18n="competitors.price">Цена (руб)</td>
+                                <td>5,000-7,000</td>
+                                <td>48,944</td>
+                                <td>21,773</td>
+                                <td>15,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Технологии -->
+        <section id="technology" class="section-py">
+            <div class="container">
+                <h2 class="section-title" data-i18n="technology.title">ТЕХНОЛОГИЧЕСКИЕ ПРЕИМУЩЕСТВА</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="tech-card">
+                            <h4 data-i18n="technology.magnetic">Магнитная система</h4>
+                            <p data-i18n="technology.magnetic_desc">Обеспечивает необходимое внешнее магнитное поле в условиях малых геометрических размеров</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tech-card">
+                            <h4 data-i18n="technology.magnets">Постоянные магниты</h4>
+                            <p data-i18n="technology.magnets_desc">Изготовлены методом напыления, обеспечивающей более высокие эксплуатационные характеристики</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tech-card">
+                            <h4 data-i18n="technology.windings">Планарные обмотки</h4>
+                            <p data-i18n="technology.windings_desc">Требуют меньшего количества витков и занимают меньший объем, лучше работают на высоких частотах</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Результаты -->
+        <section id="results" class="section-py bg-light">
+            <div class="container">
+                <h2 class="section-title" data-i18n="results.title">ТЕКУЩИЕ РЕЗУЛЬТАТЫ</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="result-card">
+                            <h4 data-i18n="results.trl">Уровень готовности TRL 3</h4>
+                            <ul>
+                                <li data-i18n="results.model">Создана математическая модель БДПТ в Matlab</li>
+                                <li data-i18n="results.analysis">Проведен анализ рынка, составлена дорожная карта</li>
+                                <li data-i18n="results.startup">Подана заявка на программу "Студенческий стартап"</li>
+                                <li data-i18n="results.letter">Получено письмо о намерениях от компании COO «METICO»</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- ГРАФИК: Карта эффективности модели БДПТ -->
+                        <div class="chart-container">
+                            <img src="assets/images/charts/efficiency-map.png" loading="lazy"
+                                 alt="Карта эффективности модели БДПТ" 
+                                 class="img-fluid rounded shadow" style="max-height: 300px;">
+                            <p class="text-center mt-2 text-muted" data-i18n="charts.efficiency_map">Карта эффективности модели БДПТ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Команда -->
+        <section id="team" class="section-py">
+            <div class="container">
+                <h2 class="section-title" data-i18n="team.title">КОМАНДА</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="team-card">
+                            <h5 data-i18n="team.designer">Инженер-конструктор</h5>
+                            <p data-i18n="team.designer_desc">Твердотельное моделирование, выпуск А1, согласно требованиям ЕСКД</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-card">
+                            <h5 data-i18n="team.electronics">Инженер-электроник</h5>
+                            <p data-i18n="team.electronics_desc">Разработка электрических решений</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-card">
+                            <h5 data-i18n="team.materials">Инженер-материаловед</h5>
+                            <p data-i18n="team.materials_desc">Выбор материалов</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-card">
+                            <h5 data-i18n="team.accountant">Бухгалтер</h5>
+                            <p data-i18n="team.accountant_desc">Ведение бухгалтерского учета, составление финансового отчета</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция Контакты С ФОРМОЙ -->
+        <section id="contacts" class="section-py">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contacts.title">КОНТАКТЫ</h2>
+                <div class="row">
+                    <!-- КАРТОЧКА РУКОВОДИТЕЛЯ СЛЕВА -->
+                    <div class="col-lg-6">
+                        <div class="contact-card">
+                            <h4 data-i18n="contacts.company">ООО НПП «МоторПро»</h4>
+                            <p class="mb-1"><strong data-i18n="hero.contact_person">Кудрявцев Роман Алексеевич</strong></p>
+                            <p class="mb-1"><strong data-i18n="hero.phone">Телефон:</strong></p>
+                            <p class="mb-1" data-i18n="hero.phone_number">+7 (905) 634-04-63</p>
+                            <p class="mb-1"><strong data-i18n="hero.email">Email:</strong></p>
+                            <p class="mb-1" data-i18n="hero.email_address">motor.pro@list.ru</p>
+                            <p class="mt-3" data-i18n="contacts.slogan">Мы помогаем БПЛА летать</p>
+                        </div>
+                    </div>
+                    
+                    <!-- ФОРМА ОБРАТНОЙ СВЯЗИ СПРАВА -->
+                    <div class="col-lg-6">
+                        <div class="form-card">
+                            <h4 data-i18n="form.title">Свяжитесь с нами</h4>
+                            <!-- ФОРМА ЧЕРЕЗ FORMSPREE -->
+                            <form action="https://formspree.io/f/xeovowzp" method="POST" class="contact-form">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label" data-i18n="form.name">Имя</label>
+                                    <input type="text" class="form-control" name="name" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label" data-i18n="form.email">Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="company" class="form-label" data-i18n="form.company">Компания</label>
+                                    <input type="text" class="form-control" name="company" id="company">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label" data-i18n="form.message">Сообщение</label>
+                                    <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100" data-i18n="form.submit">
+                                    Отправить сообщение
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Секция Спонсоры -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row justify-content-end align-items-center">
+                <div class="col-auto">
+                    <p class="mb-2 text-muted small" data-i18n="sponsors.title">При поддержке:</p>
+                    <div class="d-flex gap-4 align-items-center">
+                        <!-- ЛОГО 1 -->
+                        <div class="sponsor-logo">
+                            <img src="assets/images/sponsors/sponsor1.png" loading="lazy"
+                                 alt="Спонсор 1" 
+                                 class="img-fluid"
+                                 style="max-height: 40px;">
+                        </div>
+                        <!-- ЛОГО 2 -->
+                        <div class="sponsor-logo">
+                            <img src="assets/images/sponsors/sponsor2.png" loading="lazy"
+                                 alt="Спонсор 2" 
+                                 class="img-fluid"
+                                 style="max-height: 40px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-4">
+        <div class="container text-center">
+            <p data-i18n="footer.copyright">&copy; 2024 ООО НПП «МоторПро». Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <!-- УДАЛЕНО: <script src="js/form.js"></script> -->
+</body>
+</html>
