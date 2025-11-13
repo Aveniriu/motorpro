@@ -489,3 +489,9 @@
         height: 36px;
     }
 }
+/* Логотип в шапке */
+.logo-img {
+    height: 100px; /* регулируй по размеру */
+    width: auto;
+    object-fit: contain;
+}

@@ -192,5 +192,5 @@ app.get('/api/content', (req, res) => {
 // Запуск
 app.listen(PORT, () => {
   console.log(`🚀 Сервер запущен: http://localhost:${PORT}`);
-  console.log(`🔒 Пароль для админки: ${ADMIN_PASSWORD}`);
+  console.log(`🔒 Защищено паролем`);
 });
