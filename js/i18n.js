@@ -27,7 +27,7 @@ class I18n {
 
     async loadTranslations() {
         try {
-            const response = await fetch('/api/content');
+            const response = await fetch('/content.json');
             if (!response.ok) throw new Error('Не удалось загрузить переводы');
             this.translations = await response.json();
             this.isLoaded = true;
