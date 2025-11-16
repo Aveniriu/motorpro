@@ -1,497 +1,767 @@
-/* Main styles for MotorPro website */
-.container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 1rem;
+/* ==========================================================================
+   Переменные
+   ========================================================================== */
+
+:root {
+  --primary-orange: #D35400;
+  --accent-orange: #E67E22;
+  --primary-light: #F5F5F5;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --bg-white: #ffffff;
+  --bg-light: #f8f9fa;
+  --bg-dark: #1a1a1a;
+  --border-light: #e9ecef;
+  --gradient-orange: linear-gradient(90deg, #D35400, #E67E22);
+  --gradient-hero: linear-gradient(135deg, #1a2a3a, #2c3e50);
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --transition-fast: all 0.25s ease;
+  --container-max-width: 1200px;
+  --section-padding: 5rem 0;
 }
 
-/* Header & Navigation */
+/* ==========================================================================
+   Сброс и общие стили
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ==========================================================================
+   Шапка и навигация
+   ========================================================================== */
+
 .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    transition: var(--transition-fast);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(44, 62, 80, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: var(--transition-fast);
 }
 
 .navbar-brand {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--primary-light) !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-light) !important;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-link {
-    color: white !important;
-    font-weight: 500;
-    margin: 0 0.5rem;
-    transition: var(--transition-fast);
+  color: white !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: var(--transition-fast);
 }
 
-.nav-link:hover {
-    color: var(--accent-orange) !important;
+.nav-link:hover,
+.nav-link.active {
+  color: var(--accent-orange) !important;
+  font-weight: 600;
 }
 
 .navbar-toggler {
-    border-color: rgba(255,255,255,0.5);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Hero Section */
-.hero-section {
-    background: var(--gradient-hero);
-    color: white;
-    padding: var(--section-padding);
-    margin-top: 76px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
+/* ==========================================================================
+   Языковой переключатель
+   ========================================================================== */
 
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-}
-
-.hero-subtitle {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    opacity: 0.95;
-}
-
-.hero-description {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.hero-contacts {
-    background: rgba(255,255,255,0.1);
-    padding: 1.5rem;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-}
-
-.cta-button {
-    background: white;
-    color: var(--primary-orange);
-    padding: 0.75rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: var(--transition-fast);
-}
-
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Section Styles */
-.section-py {
-    padding: var(--section-padding);
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-dark);
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: var(--gradient-orange);
-    border-radius: 2px;
-}
-
-.section-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    color: var(--text-light);
-}
-
-/* Problem Section */
-.problem-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--shadow-card);
-    border-left: 4px solid var(--primary-orange);
-    transition: var(--transition-fast);
-    height: 100%;
-}
-
-.problem-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.problem-card h4 {
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-}
-
-/* Product Section */
-.application-list li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border-light);
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.application-list li::before {
-    content: '▶';
-    position: absolute;
-    left: 0;
-    color: var(--primary-orange);
-}
-
-.table th {
-    background: var(--primary-orange);
-    color: white;
-    border: none;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: var(--accent-light);
-}
-
-/* Market Section */
-.market-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--shadow-card);
-    margin-bottom: 2rem;
-}
-
-.market-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-orange);
-    margin: 1rem 0 0;
-}
-
-/* Chart Placeholders */
-.chart-placeholder {
-    background: var(--gradient-orange);
-    border: 2px dashed white;
-    border-radius: 10px;
-    padding: 4rem 2rem;
-    margin: 2rem 0;
-    text-align: center;
-    color: white;
-    font-weight: 600;
-    min-height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.placeholder-text {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-/* Technology Section */
-.tech-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--shadow-card);
-    transition: var(--transition-fast);
-    height: 100%;
-    border-top: 4px solid var(--primary-orange);
-}
-
-.tech-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.tech-card h4 {
-    color: var(--primary-orange);
-    margin-bottom: 1rem;
-}
-
-/* Results Section */
-.result-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-card);
-    height: 100%;
-}
-
-.result-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.result-card li {
-    padding: 0.5rem 0;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.result-card li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--primary-orange);
-    font-weight: bold;
-}
-
-/* Team Section */
-.team-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--shadow-card);
-    transition: var(--transition-fast);
-    height: 100%;
-}
-
-.team-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
-
-.team-card h5 {
-    color: var(--primary-orange);
-    margin-bottom: 1rem;
-}
-
-/* Contact Section */
-.contact-card {
-    background: var(--gradient-orange);
-    color: white;
-    padding: 3rem 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow-lg);
-}
-
-/* Footer */
-.footer {
-    background: var(--bg-dark);
-    color: white;
-}
-
-/* Background utilities */
-.bg-light {
-    background-color: var(--bg-light) !important;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.5rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .section-py {
-        padding: 3rem 0;
-    }
-    
-    .market-value {
-        font-size: 1.5rem;
-    }
-}
-
-/* Language Switcher */
 .lang-switcher {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .lang-switcher .btn {
-    border: 1px solid white;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.875rem;
+  border: 1px solid white;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  transition: var(--transition-fast);
 }
 
-.lang-switcher .btn:hover {
-    background: white;
-    color: var(--primary-orange);
+.lang-switcher .btn:hover,
+.lang-switcher .btn.active {
+  background: white;
+  color: var(--primary-orange);
 }
 
-/* Active nav link */
-.nav-link.active {
-    color: var(--accent-orange) !important;
-    font-weight: 600;
-}
-.chart-container {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-card);
-    margin: 1.5rem 0;
-    text-align: center;
+/* ==========================================================================
+   Hero-секция
+   ========================================================================== */
+
+.hero-section {
+  background: var(--gradient-hero);
+  color: white;
+  padding: var(--section-padding);
+  margin-top: 76px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.chart-container img {
-    max-height: 300px; /* Уменьшили высоту */
-    width: auto;
-    border: 1px solid var(--border-light);
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
 }
 
-/* Для особо маленького графика роста */
-.chart-container.small {
-    max-width: 600px;
-    margin: 0 auto;
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
 }
 
-.chart-container.small img {
-    max-height: 250px;
-}
-.form-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-card);
-    height: 100%;
+.hero-description {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
-.contact-form .form-control {
-    border: 1px solid var(--border-light);
-    border-radius: 5px;
-    padding: 0.75rem;
+.hero-contacts {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
 }
 
-.contact-form .form-control:focus {
-    border-color: var(--primary-orange);
-    box-shadow: 0 0 0 0.2rem rgba(211, 84, 0, 0.25);
+.cta-button {
+  background: white;
+  color: var(--primary-orange);
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition-fast);
+  border: none;
 }
 
-.contact-form .btn-primary {
-    background: var(--gradient-orange);
-    border: none;
-    padding: 0.75rem;
-    font-weight: 600;
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
-.contact-form .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+/* ==========================================================================
+   Общие стили секций
+   ========================================================================== */
+
+.section-py {
+  padding: var(--section-padding);
 }
 
-/* Product Slider */
+.bg-light {
+  background-color: var(--bg-light) !important;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-orange);
+  border-radius: 2px;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  color: var(--text-light);
+}
+
+/* ==========================================================================
+   Секция: Проблема
+   ========================================================================== */
+
+.problem-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  border-left: 4px solid var(--primary-orange);
+  transition: var(--transition-fast);
+  height: 100%;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.problem-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Секция: Продукт
+   ========================================================================== */
+
+.application-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.application-list li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: var(--primary-orange);
+}
+
+/* Слайдер продуктов */
 .product-slider {
-    width: 100%;
+  width: 100%;
 }
 
 .slider-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    background: white;
-    padding: 1.5rem;
-    box-shadow: var(--shadow-card);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
 }
 
 .slider-slide {
-    display: none;
-    animation: fadeIn 0.4s ease-in-out;
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 .slider-slide.active {
-    display: block;
+  display: block;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .slider-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .slider-btn {
-    background: var(--primary-orange);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    transition: var(--transition-fast);
+  background: var(--primary-orange);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition-fast);
 }
 
 .slider-btn:hover {
-    background: var(--accent-orange);
-    transform: scale(1.05);
-}
-
-.slider-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  background: var(--accent-orange);
+  transform: scale(1.05);
 }
 
 .slider-dots {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .slider-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-    transition: var(--transition-fast);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: var(--transition-fast);
 }
 
 .slider-dot.active {
-    background: var(--primary-orange);
-    transform: scale(1.1);
+  background: var(--primary-orange);
+  transform: scale(1.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .slider-nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .slider-btn {
-        width: 36px;
-        height: 36px;
-    }
+/* Таблица в слайде продукта */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.03);
 }
-/* Логотип в шапке */
-.logo-img {
-    height: 100px; /* регулируй по размеру */
-    width: auto;
-    object-fit: contain;
+
+.table th {
+  background: var(--gradient-orange) !important;
+  color: white !important;
+}
+
+/* ==========================================================================
+   Секция: Конкуренты — ЕДИНСТВЕННОЕ ПРАВИЛЬНОЕ ПРАВИЛО
+   ========================================================================== */
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin: 2rem 0;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+#competitors-table {
+  width: 100%;
+  min-width: 800px;
+  table-layout: auto;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+#competitors-table th,
+#competitors-table td {
+  padding: 0.75rem;
+  text-align: center;
+  white-space: normal;
+  border: 1px solid var(--border-light);
+}
+
+#competitors-table th {
+  background: var(--gradient-orange) !important;
+  color: white !important;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    padding: 0.5rem;
+  }
+  #competitors-table {
+    font-size: 0.85rem;
+  }
+  #competitors-table th,
+  #competitors-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   Секция: Технологии
+   ========================================================================== */
+
+.tech-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+  height: 100%;
+  border-top: 4px solid var(--primary-orange);
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tech-card h4 {
+  color: var(--primary-orange);
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Секция: Результаты
+   ========================================================================== */
+
+.result-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  height: 100%;
+}
+
+.result-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result-card li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.result-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-orange);
+  font-weight: bold;
+}
+
+/* Графики */
+.chart-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.chart-container img {
+  max-height: 300px;
+  width: auto;
+  border: 1px solid var(--border-light);
+}
+
+/* ==========================================================================
+   Секция: Команда
+   ========================================================================== */
+
+.team-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+  height: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.team-card h5 {
+  color: var(--primary-orange);
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Секция: Контакты
+   ========================================================================== */
+
+.contact-card {
+  background: var(--gradient-orange);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow-lg);
+  height: 100%;
+}
+
+.form-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  height: 100%;
+}
+
+.contact-form .form-control {
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  padding: 0.75rem;
+}
+
+.contact-form .form-control:focus {
+  border-color: var(--primary-orange);
+  box-shadow: 0 0 0 0.2rem rgba(211, 84, 0, 0.25);
+}
+
+.contact-form .btn-primary {
+  background: var(--gradient-orange);
+  border: none;
+  padding: 0.75rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.contact-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+   Футер
+   ========================================================================== */
+
+.footer {
+  background: var(--bg-dark);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ==========================================================================
+   Адаптивность
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-py {
+    padding: 3rem 0;
+  }
+
+  .slider-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 36px;
+  }
+}
+
+/* ==========================================================================
+   Поддержка тёмной темы
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+  }
+
+  .section-py {
+    background-color: #1e1e1e !important;
+  }
+
+  /* Заголовки секций — СВЕТЛЫЕ */
+  .section-title {
+    color: white !important;
+  }
+
+  /* Остальной текст */
+  .section-text,
+  .hero-subtitle,
+  .hero-description {
+    color: #d0d0d0 !important;
+  }
+
+  /* Карточки */
+  .problem-card,
+  .tech-card,
+  .team-card,
+  .result-card,
+  .form-card {
+    background: #2a2a2a !important;
+    color: #e0e0e0 !important;
+  }
+
+  .problem-card h4,
+  .tech-card h4,
+  .team-card h5,
+  .result-card h4 {
+    color: white !important;
+  }
+
+  .contact-card {
+    background: linear-gradient(90deg, #b04500, #c26a1f) !important;
+  }
+
+  /* Таблица (если у тебя остался этот блок) */
+  .competitors-table {
+    background: #2a2a2a;
+    color: #e0e0e0;
+  }
+
+  .competitors-table th {
+    background: linear-gradient(90deg, #b04500, #c26a1f) !important;
+    border-color: #444 !important;
+  }
+
+  .competitors-table td {
+    color: #f0f0f0 !important;
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+  }
+
+  .competitors-table tbody tr:nth-child(even) {
+    background-color: #333 !important;
+  }
+
+  .table-wrapper {
+    background: #222;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+
+/* Поддержка colgroup */
+#competitors-table col {
+  width: auto;
+}
+
+#competitors-table colgroup {
+  display: table-column-group;
+}
+
+.competitors-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.competitors-table th,
+.competitors-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid var(--border-light);
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.competitors-table th {
+  background: var(--gradient-orange) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Улучшение читаемости текста в таблице конкурентов */
+.competitors-table td {
+  color: var(--text-dark) !important; /* Тёмный текст */
+  font-weight: 500; /* Чуть жирнее для лучшей читаемости */
+}
+
+.competitors-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* ==========================================================================
+   Таблица конкурентов — адаптивная под светлую и тёмную тему
+   ========================================================================== */
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.competitors-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: white; /* Светлый фон по умолчанию */
+}
+
+.competitors-table th {
+  background: var(--gradient-orange) !important;
+  color: white !important;
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid var(--border-light);
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.competitors-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid var(--border-light);
+  white-space: normal;
+  word-wrap: break-word;
+  color: var(--text-dark); /* Тёмный текст */
+  font-weight: 500;
+  background: white; /* Ячейки — белые */
+}
+
+/* Зебра-эффект для лучшей читаемости */
+.competitors-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* ==========================================================================
+   Адаптация под системную тёмную тему
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  .competitors-table {
+    background: #2a2a2a; /* Тёмно-серый фон */
+    color: #e0e0e0;
+  }
+
+  .competitors-table th {
+    background: linear-gradient(90deg, #b04500, #c26a1f) !important; /* Тёмно-оранжевый градиент */
+    border-color: #444 !important;
+  }
+
+  .competitors-table td {
+    color: #f0f0f0 !important; /* Светлый текст */
+    background: #2a2a2a !important;
+    border-color: #444 !important;
+  }
+
+  .competitors-table tbody tr:nth-child(even) {
+    background-color: #333 !important; /* Чуть темнее для зебры */
+  }
+
+  .table-wrapper {
+    background: #222;
+    padding: 1rem;
+    border-radius: 10px;
+  }
 }

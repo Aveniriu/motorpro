@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="site.title">ООО НПП МоторПро - Бесколлекторные двигатели для БПЛА</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body>
@@ -17,8 +17,8 @@
         <nav class="nav navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <a class="navbar-brand" href="#hero">
-    <img src="/assets/images/logo.png" alt="МоторПро" class="logo-img">
-</a>
+                    <img src="/assets/images/logo.png" alt="МоторПро" class="logo-img">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -89,87 +89,47 @@
             </div>
         </section>
 
-<!-- Секция Продукт -->
-<section id="product" class="section-py bg-light">
-    <div class="container">
-        <h2 class="section-title" data-i18n="product.title">ОПИСАНИЕ КОНЕЧНОГО ПРОДУКТА</h2>
-        <div class="row">
-            <div class="col-lg-6">
-                <!-- Слайдер продуктов -->
-                <div class="product-slider">
-                    <div class="slider-container" id="slider-container">
-                        <!-- Слайды будут здесь -->
-                    </div>
-                    <div class="slider-nav">
-                        <button class="slider-btn" id="prev-btn">←</button>
-                        <div class="slider-dots" id="slider-dots"></div>
-                        <button class="slider-btn" id="next-btn">→</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h4 data-i18n="product.applications">ОБЛАСТЬ ПРИМЕНЕНИЯ</h4>
-                <ul class="application-list">
-                    <li data-i18n="product.aviation">Авиационная и беспилотная авиационная техника</li>
-                    <li data-i18n="product.space">Космическая техника</li>
-                    <li data-i18n="product.rockets">Ракетостроение</li>
-                    <li data-i18n="product.robotics">Робототехника</li>
-                    <li data-i18n="product.medical">Медицинская техника</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- Секция Конкуренты -->
-        <section id="competitors" class="section-py bg-light">
+        <!-- Секция Продукт -->
+        <section id="product" class="section-py bg-light">
             <div class="container">
-                <h2 class="section-title" data-i18n="competitors.title">АНАЛОГИ И КОНКУРЕНТЫ</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <thead class="table-dark">
-                            <tr>
-                                <th data-i18n="competitors.parameter">Параметр</th>
-                                <th data-i18n="competitors.our_product">Наш продукт</th>
-                                <th data-i18n="competitors.analog1">Аналог 1</th>
-                                <th data-i18n="competitors.analog2">Аналог 2</th>
-                                <th data-i18n="competitors.analog3">Аналог 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-i18n="competitors.power">Мощность (Вт)</td>
-                                <td>180</td>
-                                <td>142.9</td>
-                                <td>182.64</td>
-                                <td>172.8</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="competitors.efficiency">КПД (%)</td>
-                                <td>85-90</td>
-                                <td>88.5</td>
-                                <td>88.5</td>
-                                <td>81</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="competitors.speed">Скорость (об/мин)</td>
-                                <td>45000</td>
-                                <td>28460</td>
-                                <td>30650</td>
-                                <td>27000</td>
-                            </tr>
-                            <tr>
-                                <td data-i18n="competitors.price">Цена (руб)</td>
-                                <td>5,000-7,000</td>
-                                <td>48,944</td>
-                                <td>21,773</td>
-                                <td>15,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <h2 class="section-title" data-i18n="product.title">ОПИСАНИЕ КОНЕЧНОГО ПРОДУКТА</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Слайдер продуктов -->
+                        <div class="product-slider">
+                            <div class="slider-container" id="slider-container">
+                                <!-- Слайды будут здесь -->
+                            </div>
+                            <div class="slider-nav">
+                                <button class="slider-btn" id="prev-btn">←</button>
+                                <div class="slider-dots" id="slider-dots"></div>
+                                <button class="slider-btn" id="next-btn">→</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h4 data-i18n="product.applications">ОБЛАСТЬ ПРИМЕНЕНИЯ</h4>
+                        <ul class="application-list">
+                            <li data-i18n="product.aviation">Авиационная и беспилотная авиационная техника</li>
+                            <li data-i18n="product.space">Космическая техника</li>
+                            <li data-i18n="product.rockets">Ракетостроение</li>
+                            <li data-i18n="product.robotics">Робототехника</li>
+                            <li data-i18n="product.medical">Медицинская техника</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
+
+<!-- Секция Конкуренты -->
+<section id="competitors" class="section-py bg-light">
+    <div class="container">
+        <h2 class="section-title" data-i18n="competitors.title">АНАЛОГИ И КОНКУРЕНТЫ</h2>
+        <div class="table-wrapper">
+            <table id="competitors-table" class="competitors-table"></table>
+        </div>
+    </div>
+</section>
 
         <!-- Секция Технологии -->
         <section id="technology" class="section-py">
@@ -185,7 +145,7 @@
                     <div class="col-md-4">
                         <div class="tech-card">
                             <h4 data-i18n="technology.magnets">Постоянные магниты</h4>
-                            <p data-i18n="technology.magnets_desc">Изготовлены методом напыления, обеспечивающей более высокие эксплуатационные характеристики</p>
+                            <p data-i18n="technology.magnets_desc">Специальные магниты с более высокими эксплуатационными характеристиками</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -210,7 +170,6 @@
                                 <li data-i18n="results.model">Создана математическая модель БДПТ в Matlab</li>
                                 <li data-i18n="results.analysis">Проведен анализ рынка, составлена дорожная карта</li>
                                 <li data-i18n="results.startup">Подана заявка на программу "Студенческий стартап"</li>
-                                <li data-i18n="results.letter">Получено письмо о намерениях от компании COO «METICO»</li>
                             </ul>
                         </div>
                     </div>
@@ -218,7 +177,7 @@
                         <!-- ГРАФИК: Карта эффективности модели БДПТ -->
                         <div class="chart-container">
                             <img src="assets/images/charts/efficiency-map.png" loading="lazy"
-                                 alt="Карта эффективности модели БДПТ" 
+                                 alt="3D-модель двигателя" 
                                  class="img-fluid rounded shadow" style="max-height: 300px;">
                             <p class="text-center mt-2 text-muted" data-i18n="charts.efficiency_map">Карта эффективности модели БДПТ</p>
                         </div>
@@ -300,6 +259,13 @@
                                     <label for="message" class="form-label" data-i18n="form.message">Сообщение</label>
                                     <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
                                 </div>
+                               <!-- Внутри <form class="contact-form"> -->
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="consent" name="consent" required>
+                                    <label class="form-check-label" for="consent" data-i18n="form.consent">
+                                    Я даю согласие на обработку персональных данных
+                                    </label>
+                                </div>
                                 <button type="submit" class="btn btn-primary w-100" data-i18n="form.submit">
                                     Отправить сообщение
                                 </button>
@@ -348,6 +314,5 @@
     <script src="js/i18n.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
-    <!-- УДАЛЕНО: <script src="js/form.js"></script> -->
 </body>
 </html>

@@ -30,8 +30,7 @@
       "description": "Увеличение рыночного спроса на малогабаритные БПЛА влечёт за собой необходимость увеличивать объём выпуска микроприводной техники для управления винтами БПЛА. Существует несколько основных сдерживающих факторов для удовлетворения спроса на микроприводную технику в РФ:",
       "sanctions": "1. Санкции при закупках",
       "logistics": "2. Логистические сложности",
-      "no_analogs": "3. Отсутствие отечественных аналогов",
-      "items": []
+      "no_analogs": "3. Отсутствие отечественных аналогов"
     },
     "product": {
       "title": "ОПИСАНИЕ КОНЕЧНОГО ПРОДУКТА",
@@ -42,7 +41,7 @@
       "rockets": "Ракетостроение",
       "robotics": "Робототехника",
       "medical": "Медицинская техника",
-      "dimensions": "Размеры (Вт×L)",
+      "dimensions": "Размеры (Ø × L)",
       "weight": "Масса",
       "voltage": "Рабочее напряжение",
       "speed": "Скорость вращения",
@@ -53,14 +52,14 @@
     "products": [
       {
         "id": "motor-1",
-        "name": "Продукт №1",
-        "dimensions": "30х30 мм",
-        "weight": "210 г",
-        "voltage": "36 В",
-        "speed": "45000 об/мин",
-        "power": "180 Вт",
-        "torque": "≥ 40 мН·м",
-        "efficiency": "85-90 %"
+        "name": "МоторПро БДПТ-30",
+        "dimensions": "30×47",
+        "weight": 210,
+        "voltage": 36,
+        "speed": 45000,
+        "power": 175,
+        "torque": 40,
+        "efficiency": "80-90"
       }
     ],
     "market": {
@@ -73,15 +72,66 @@
     "competitors": {
       "title": "АНАЛОГИ И КОНКУРЕНТЫ",
       "parameter": "Параметр",
-      "our_product": "Наш продукт",
-      "analog1": "Аналог 1",
-      "analog2": "Аналог 2",
-      "analog3": "Аналог 3",
-      "power": "Мощность (Вт)",
-      "efficiency": "КПД (%)",
+      "dimensions": "Габариты (Ø × L)",
+      "voltage": "Напряжение",
       "speed": "Скорость (об/мин)",
-      "price": "Цена (руб)"
+      "torque": "Крутящий момент",
+      "efficiency": "КПД",
+      "weight": "Вес",
+      "power": "Мощность"
     },
+    "competitorProducts": [
+      {
+        "name": "МоторПро БДПТ-30",
+        "dimensions": "30×47",
+        "voltage": 36,
+        "speed": 45000,
+        "torque": 40,
+        "efficiency": "80-90",
+        "weight": 210,
+        "power": 175
+      },
+      {
+        "name": "Faulhaber 2264 012 BP4",
+        "dimensions": "22×64",
+        "voltage": 12,
+        "speed": 20460,
+        "torque": 59,
+        "efficiency": "88.5",
+        "weight": 190,
+        "power": 143
+      },
+      {
+        "name": "Maxon EC-4pole 30",
+        "dimensions": "30×65",
+        "voltage": 24,
+        "speed": 16660,
+        "torque": 85,
+        "efficiency": "80.5",
+        "weight": 300,
+        "power": 183
+      },
+      {
+        "name": "Constar BO2228N2B",
+        "dimensions": "28×29",
+        "voltage": 36,
+        "speed": 8540,
+        "torque": 157,
+        "efficiency": "81",
+        "weight": 210,
+        "power": 173
+      },
+      {
+        "name": "Assun AM-BL4060BF",
+        "dimensions": "40×60",
+        "voltage": 24,
+        "speed": 6425,
+        "torque": 185,
+        "efficiency": "87",
+        "weight": 356,
+        "power": 144
+      }
+    ],
     "technology": {
       "title": "ТЕХНОЛОГИЧЕСКИЕ ПРЕИМУЩЕСТВА",
       "magnetic": "Магнитная система",
@@ -94,21 +144,20 @@
     "results": {
       "title": "ТЕКУЩИЕ РЕЗУЛЬТАТЫ",
       "trl": "Уровень готовности TRL 3",
-      "model": "Создана математическая модель БДПТ в Matlab",
+      "model": "Ведётся разработка 3D-модели двигателя и программного обеспечения для симуляции",
       "analysis": "Проведен анализ рынка, составлена дорожная карта",
-      "startup": "Подана заявка на программу \"Студенческий стартап\"",
-      "letter": "Получено письмо о намерениях от компании COO «METICO»"
+      "startup": "Подана заявка на программу \"Студенческий стартап\""
     },
     "team": {
       "title": "КОМАНДА",
-      "designer": "Инженер-конструктор",
-      "designer_desc": "Твердотельное моделирование, выпуск А1, согласно требованиям ЕСКД",
-      "electronics": "Инженер-электроник",
-      "electronics_desc": "Разработка электрических решений",
-      "materials": "Инженер-материаловед",
-      "materials_desc": "Выбор материалов",
-      "accountant": "Бухгалтер",
-      "accountant_desc": "Ведение бухгалтерского учета, составление финансового отчета"
+      "designer": "Конструктор проекта",
+      "designer_desc": "Занимается твердотельным моделированием и выпуском конструкторской документации по ЕСКД",
+      "electronics": "Инженер по электронике",
+      "electronics_desc": "Разрабатывает схемы управления и системы питания бесколлекторного двигателя",
+      "materials": "Специалист по материалам",
+      "materials_desc": "Подбирает материалы, устойчивые к высоким температурам и нагрузкам",
+      "accountant": "Финансовый аналитик",
+      "accountant_desc": "Обеспечивает финансовую устойчивость проекта и подготовку отчётности"
     },
     "finance": {
       "title": "ФИНАНСОВЫЙ ПЛАН",
@@ -151,7 +200,7 @@
     },
     "charts": {
       "market_growth": "Динамика роста рынка БПЛА в РФ 2020-2024",
-      "efficiency_map": "Карта эффективности модели БДПТ"
+      "efficiency_map": "3D-модель двигателя"
     },
     "form": {
       "title": "Свяжитесь с нами",
@@ -159,7 +208,8 @@
       "email": "Email",
       "company": "Компания",
       "message": "Сообщение",
-      "submit": "Отправить сообщение"
+      "submit": "Отправить сообщение",
+      "consent": "Я даю согласие на обработку персональных данных"
     }
   },
   "en": {
@@ -204,7 +254,7 @@
       "rockets": "Rocket engineering",
       "robotics": "Robotics",
       "medical": "Medical technology",
-      "dimensions": "Dimensions (W×L)",
+      "dimensions": "Dimensions (Ø × L)",
       "weight": "Weight",
       "voltage": "Operating voltage",
       "speed": "Rotation speed",
@@ -216,13 +266,13 @@
       {
         "id": "motor-1",
         "name": "Brushless DC Motor BLDC-30",
-        "dimensions": "30×30 mm",
-        "weight": "210 g",
-        "voltage": "36 V",
-        "speed": "45000 RPM",
-        "power": "180 W",
-        "torque": "≥ 40 mN·m",
-        "efficiency": "85-90 %"
+        "dimensions": "30×30",
+        "weight": 210,
+        "voltage": 36,
+        "speed": 45000,
+        "power": 180,
+        "torque": 40,
+        "efficiency": "85-90"
       }
     ],
     "market": {
@@ -235,15 +285,66 @@
     "competitors": {
       "title": "ANALOGS AND COMPETITORS",
       "parameter": "Parameter",
-      "our_product": "Our product",
-      "analog1": "Analog 1",
-      "analog2": "Analog 2",
-      "analog3": "Analog 3",
-      "power": "Power (W)",
-      "efficiency": "Efficiency (%)",
+      "dimensions": "Dimensions (Ø × L)",
+      "voltage": "Voltage",
       "speed": "Speed (RPM)",
-      "price": "Price (RUB)"
+      "torque": "Torque",
+      "efficiency": "Efficiency",
+      "weight": "Weight",
+      "power": "Power"
     },
+    "competitorProducts": [
+      {
+        "name": "MotorPro BLDC-30",
+        "dimensions": "30×47",
+        "voltage": 36,
+        "speed": 45000,
+        "torque": 40,
+        "efficiency": "80-90",
+        "weight": 210,
+        "power": 175
+      },
+      {
+        "name": "Faulhaber 2264 012 BP4",
+        "dimensions": "22×64",
+        "voltage": 12,
+        "speed": 20460,
+        "torque": 59,
+        "efficiency": "88.5",
+        "weight": 190,
+        "power": 143
+      },
+      {
+        "name": "Maxon EC-4pole 30",
+        "dimensions": "30×65",
+        "voltage": 24,
+        "speed": 16660,
+        "torque": 85,
+        "efficiency": "80.5",
+        "weight": 300,
+        "power": 183
+      },
+      {
+        "name": "Constar BO2228N2B",
+        "dimensions": "28×29",
+        "voltage": 36,
+        "speed": 8540,
+        "torque": 157,
+        "efficiency": "81",
+        "weight": 210,
+        "power": 173
+      },
+      {
+        "name": "Assun AM-BL4060BF",
+        "dimensions": "40×60",
+        "voltage": 24,
+        "speed": 6425,
+        "torque": 185,
+        "efficiency": "87",
+        "weight": 356,
+        "power": 144
+      }
+    ],
     "technology": {
       "title": "TECHNOLOGICAL ADVANTAGES",
       "magnetic": "Magnetic system",
@@ -256,21 +357,21 @@
     "results": {
       "title": "CURRENT RESULTS",
       "trl": "Technology Readiness Level TRL 3",
-      "model": "Mathematical model of BLDC motor created in Matlab",
+      "model": "Developing a 3D motor model and simulation software",
       "analysis": "Market analysis conducted, roadmap developed",
       "startup": "Application submitted for \"Student Startup\" program",
       "letter": "Letter of intent received from COO \"METICO\" company"
     },
     "team": {
       "title": "TEAM",
-      "designer": "Design Engineer",
-      "designer_desc": "Solid modeling, A1 release, according to ESKD requirements",
+      "designer": "Project Design Engineer",
+      "designer_desc": "Handles solid modeling and prepares engineering documentation in accordance with ESKD standards",
       "electronics": "Electronics Engineer",
-      "electronics_desc": "Development of electrical solutions",
-      "materials": "Materials Engineer",
-      "materials_desc": "Material selection",
-      "accountant": "Accountant",
-      "accountant_desc": "Accounting, financial reporting"
+      "electronics_desc": "Develops motor control circuits and power supply systems for brushless motors",
+      "materials": "Materials Specialist",
+      "materials_desc": "Selects materials resistant to high temperatures and mechanical stress",
+      "accountant": "Financial Analyst",
+      "accountant_desc": "Ensures project financial sustainability and prepares financial reports"
     },
     "finance": {
       "title": "FINANCIAL PLAN",
@@ -310,7 +411,7 @@
     },
     "charts": {
       "market_growth": "UAV Market Growth Dynamics in Russia 2020-2024",
-      "efficiency_map": "BLDC Motor Model Efficiency Map"
+      "efficiency_map": "3-D model of engine"
     },
     "sponsors": {
       "title": "With the support of:"
@@ -321,7 +422,8 @@
       "email": "Email",
       "company": "Company",
       "message": "Message",
-      "submit": "Send a message"
+      "submit": "Send a message",
+      "consent": "I consent to the processing of personal data"
     }
   },
   "zh": {
@@ -366,25 +468,25 @@
       "rockets": "火箭工程",
       "robotics": "机器人技术",
       "medical": "医疗技术",
-      "dimensions": "尺寸 (宽×长)",
-      "weight": "重量",
-      "voltage": "工作电压",
-      "speed": "转速",
-      "power": "功率",
+      "dimensions": "尺寸 (Ø × L)",
+      "voltage": "电压",
+      "speed": "转速 (转/分)",
       "torque": "扭矩",
-      "efficiency": "效率"
+      "efficiency": "效率",
+      "weight": "重量",
+      "power": "功率"
     },
     "products": [
       {
         "id": "motor-1",
         "name": "无刷直流电机 BLDC-30",
-        "dimensions": "30×30 毫米",
-        "weight": "210 克",
-        "voltage": "36 伏",
-        "speed": "45000 转/分",
-        "power": "180 瓦",
-        "torque": "≥ 40 毫牛·米",
-        "efficiency": "85-90 %"
+        "dimensions": "30×30",
+        "weight": 210,
+        "voltage": 36,
+        "speed": 45000,
+        "power": 180,
+        "torque": 40,
+        "efficiency": "85-90"
       }
     ],
     "market": {
@@ -397,15 +499,66 @@
     "competitors": {
       "title": "类似产品与竞争对手",
       "parameter": "参数",
-      "our_product": "我们的产品",
-      "analog1": "类似产品1",
-      "analog2": "类似产品2",
-      "analog3": "类似产品3",
-      "power": "功率 (瓦)",
-      "efficiency": "效率 (%)",
+      "dimensions": "尺寸 (Ø × L)",
+      "voltage": "电压",
       "speed": "速度 (转/分)",
-      "price": "价格 (卢布)"
+      "torque": "扭矩",
+      "efficiency": "效率",
+      "weight": "重量",
+      "power": "功率"
     },
+    "competitorProducts": [
+      {
+        "name": "MotorPro BLDC-30",
+        "dimensions": "30×47",
+        "voltage": 36,
+        "speed": 45000,
+        "torque": 40,
+        "efficiency": "80-90",
+        "weight": 210,
+        "power": 175
+      },
+      {
+        "name": "Faulhaber 2264 012 BP4",
+        "dimensions": "22×64",
+        "voltage": 12,
+        "speed": 20460,
+        "torque": 59,
+        "efficiency": "88.5",
+        "weight": 190,
+        "power": 143
+      },
+      {
+        "name": "Maxon EC-4pole 30",
+        "dimensions": "30×65",
+        "voltage": 24,
+        "speed": 16660,
+        "torque": 85,
+        "efficiency": "80.5",
+        "weight": 300,
+        "power": 183
+      },
+      {
+        "name": "Constar BO2228N2B",
+        "dimensions": "28×29",
+        "voltage": 36,
+        "speed": 8540,
+        "torque": 157,
+        "efficiency": "81",
+        "weight": 210,
+        "power": 173
+      },
+      {
+        "name": "Assun AM-BL4060BF",
+        "dimensions": "40×60",
+        "voltage": 24,
+        "speed": 6425,
+        "torque": 185,
+        "efficiency": "87",
+        "weight": 356,
+        "power": 144
+      }
+    ],
     "technology": {
       "title": "技术优势",
       "magnetic": "磁系统",
@@ -418,21 +571,21 @@
     "results": {
       "title": "当前成果",
       "trl": "技术就绪水平 TRL 3",
-      "model": "在Matlab中创建了BLDC电机的数学模型",
+      "model": "正在开发电机的三维模型和仿真软件",
       "analysis": "进行了市场分析，制定了路线图",
       "startup": "已提交\"学生创业\"计划申请",
       "letter": "收到COO \"METICO\"公司的意向书"
     },
     "team": {
       "title": "团队",
-      "designer": "设计工程师",
-      "designer_desc": "实体建模，A1发布，符合ESKD要求",
+      "designer": "项目设计工程师",
+      "designer_desc": "负责实体建模，并根据ESKD标准编制工程文档",
       "electronics": "电子工程师",
-      "electronics_desc": "电气解决方案开发",
-      "materials": "材料工程师",
-      "materials_desc": "材料选择",
-      "accountant": "会计师",
-      "accountant_desc": "会计核算，财务报表"
+      "electronics_desc": "开发无刷电机的控制电路和供电系统",
+      "materials": "材料专家",
+      "materials_desc": "选择耐高温和高负载的材料",
+      "accountant": "财务分析师",
+      "accountant_desc": "确保项目的财务可持续性并编制财务报告"
     },
     "finance": {
       "title": "财务计划",
@@ -472,7 +625,7 @@
     },
     "charts": {
       "market_growth": "俄罗斯无人机市场增长动态 2020-2024",
-      "efficiency_map": "BLDC电机模型效率图"
+      "efficiency_map": "发动机的三维模型"
     },
     "sponsors": {
       "title": "在:"
@@ -483,7 +636,8 @@
       "email": "电邮",
       "company": "公司",
       "message": "信息",
-      "submit": "发送信息"
+      "submit": "发送信息",
+      "consent": "我同意处理个人数据"
     }
   }
 }
