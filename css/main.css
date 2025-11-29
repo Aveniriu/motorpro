@@ -765,3 +765,8 @@ body {
     border-radius: 10px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  [data-i18n="product.disclaimer"] {
+    color: #bbb !important;
+  }
+}
