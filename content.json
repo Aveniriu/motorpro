@@ -74,7 +74,7 @@
       "title": "АНАЛОГИ",
       "parameter": "Параметр",
       "dimensions": "Габариты (Ø × L, мм)",
-      "voltage": "Напряжение (В)",
+      "voltage": "Напряжение (V)",
       "speed": "Скорость (об/мин)",
       "torque": "Крутящий момент (мН·м)",
       "efficiency": "КПД (%)",
@@ -190,7 +190,7 @@
     "units": {
       "mm": "мм",
       "grams": "г",
-      "volts": "В",
+      "volts": "V",
       "rpm": "об/мин",
       "watts": "Вт",
       "millinewton_meters": "мН·м",

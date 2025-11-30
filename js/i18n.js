@@ -66,6 +66,7 @@ class I18n {
         // Рендер динамических секций
         this.renderProducts();
         this.renderCompetitorsTable();
+        this.render3dSlider(); // ← НОВЫЙ СЛАЙДЕР
 
         // Обновление кнопок выбора языка
         document.querySelectorAll('.lang-switcher button').forEach(btn => {
@@ -146,82 +147,131 @@ class I18n {
         this.updateSliderNav();
     }
 
-renderCompetitorsTable() {
-    const tableEl = document.getElementById('competitors-table');
-    if (!tableEl) return;
+    renderCompetitorsTable() {
+        const tableEl = document.getElementById('competitors-table');
+        if (!tableEl) return;
 
-    const data = this.translations[this.currentLang];
-    if (!data?.competitorProducts) {
-        tableEl.innerHTML = '<tr><td>Таблица не доступна</td></tr>';
-        return;
+        const data = this.translations[this.currentLang];
+        if (!data?.competitorProducts) {
+            tableEl.innerHTML = '<tr><td>Таблица не доступна</td></tr>';
+            return;
+        }
+
+        const products = data.competitorProducts;
+        const params = ['dimensions', 'voltage', 'speed', 'torque', 'efficiency', 'weight', 'power'];
+        const paramLabels = {
+            dimensions: this.getTranslation('competitors.dimensions'),
+            voltage: this.getTranslation('competitors.voltage'),
+            speed: this.getTranslation('competitors.speed'),
+            torque: this.getTranslation('competitors.torque'),
+            efficiency: this.getTranslation('competitors.efficiency'),
+            weight: this.getTranslation('competitors.weight'),
+            power: this.getTranslation('competitors.power')
+        };
+        const locale = this.currentLang === 'ru' ? 'ru-RU' :
+                       this.currentLang === 'zh' ? 'zh-CN' : 'en-US';
+        const fmt = new Intl.NumberFormat(locale);
+
+        // Начинаем строить HTML
+        let html = '<thead><tr>';
+        html += `<th>${this.getTranslation('competitors.parameter')}</th>`;
+        products.forEach(p => {
+            html += `<th>${p.name}</th>`;
+        });
+        html += '</tr></thead><tbody>';
+
+        params.forEach(param => {
+            html += '<tr>';
+            html += `<td>${paramLabels[param]}</td>`;
+            products.forEach(p => {
+                const val = p[param];
+                if (val == null) {
+                    html += '<td>—</td>';
+                } else if (param === 'efficiency') {
+                    // Для КПД оставляем как есть (уже с % в данных)
+                    html += `<td>${val}</td>`;
+                } else if (typeof val === 'number') {
+                    // Форматируем числа (но без единиц!)
+                    html += `<td>${fmt.format(val)}</td>`;
+                } else {
+                    // dimensions и другие строки
+                    html += `<td>${val}</td>`;
+                }
+            });
+            html += '</tr>';
+        });
+
+        html += '</tbody>';
+        tableEl.innerHTML = html;
     }
 
-    const products = data.competitorProducts;
-    const params = ['dimensions', 'voltage', 'speed', 'torque', 'efficiency', 'weight', 'power'];
-    const paramLabels = {
-        dimensions: this.getTranslation('competitors.dimensions'),
-        voltage: this.getTranslation('competitors.voltage'),
-        speed: this.getTranslation('competitors.speed'),
-        torque: this.getTranslation('competitors.torque'),
-        efficiency: this.getTranslation('competitors.efficiency'),
-        weight: this.getTranslation('competitors.weight'),
-        power: this.getTranslation('competitors.power')
-    };
-    const u = data.units || {};
-    const locale = this.currentLang === 'ru' ? 'ru-RU' :
-                   this.currentLang === 'zh' ? 'zh-CN' : 'en-US';
-    const fmt = new Intl.NumberFormat(locale);
+    // === НОВЫЙ СЛАЙДЕР: 3D-МОДЕЛЬ ===
+    render3dSlider() {
+        const container = document.getElementById('3d-slider');
+        const dotsContainer = document.getElementById('3d-dots');
+        const prevBtn = document.getElementById('3d-prev');
+        const nextBtn = document.getElementById('3d-next');
+        
+        if (!container || !dotsContainer || !prevBtn || !nextBtn) return;
 
-    // Начинаем строить HTML
-    let html = '<thead><tr>';
-    html += `<th>${this.getTranslation('competitors.parameter')}</th>`;
-    products.forEach(p => {
-        html += `<th>${p.name}</th>`;
-    });
-    html += '</tr></thead><tbody>';
+        // Количество изображений (измени при необходимости)
+        const imageCount = 4;
+        const basePath = 'assets/images/3d/3d-';
 
-    params.forEach(param => {
-        html += '<tr>';
-        html += `<td>${paramLabels[param]}</td>`;
-        products.forEach(p => {
-            const val = p[param];
-            if (val == null) {
-                html += '<td>—</td>';
-            } else if (param === 'dimensions') {
-                html += `<td>${val} ${u.mm || 'mm'}</td>`;
-            } else if (param === 'voltage') {
-                html += `<td>${fmt.format(val)} ${u.volts || 'V'}</td>`;
-            } else if (param === 'speed') {
-                html += `<td>${fmt.format(val)} ${u.rpm || 'RPM'}</td>`;
-            } else if (param === 'torque') {
-                html += `<td>${fmt.format(val)} ${u.millinewton_meters || 'mN·m'}</td>`;
-            } else if (param === 'efficiency') {
-                html += `<td>${val} ${u.percent || '%'}</td>`;
-            } else if (param === 'weight') {
-                html += `<td>${fmt.format(val)} ${u.grams || 'g'}</td>`;
-            } else if (param === 'power') {
-                html += `<td>${fmt.format(val)} ${u.watts || 'W'}</td>`;
-            } else {
-                html += `<td>${val}</td>`;
-            }
-        });
-        html += '</tr>';
-    });
+        // Генерация слайдов
+        container.innerHTML = '';
+        dotsContainer.innerHTML = '';
 
-    html += '</tbody>';
-    tableEl.innerHTML = html;
-}
+        for (let i = 1; i <= imageCount; i++) {
+            const slide = document.createElement('div');
+            slide.className = 'slider-slide';
+            if (i === 1) slide.classList.add('active');
 
-    // Переключение слайда
+            slide.innerHTML = `<img src="${basePath}${i}.jpg" alt="3D-вид ${i}" class="img-fluid">`;
+            container.appendChild(slide);
+
+            const dot = document.createElement('div');
+            dot.className = 'slider-dot';
+            if (i === 1) dot.classList.add('active');
+            dot.addEventListener('click', () => this.goTo3dSlide(i - 1));
+            dotsContainer.appendChild(dot);
+        }
+
+        this.current3dSlide = 0;
+        this.total3dSlides = imageCount;
+
+        prevBtn.onclick = () => this.goTo3dSlide(this.current3dSlide - 1);
+        nextBtn.onclick = () => this.goTo3dSlide(this.current3dSlide + 1);
+
+        this.update3dSliderNav();
+    }
+
+    goTo3dSlide(index) {
+        if (index < 0) index = this.total3dSlides - 1;
+        if (index >= this.total3dSlides) index = 0;
+
+        document.querySelectorAll('#3d-slider .slider-slide').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('#3d-dots .slider-dot').forEach(d => d.classList.remove('active'));
+
+        document.querySelectorAll('#3d-slider .slider-slide')[index]?.classList.add('active');
+        document.querySelectorAll('#3d-dots .slider-dot')[index]?.classList.add('active');
+
+        this.current3dSlide = index;
+        this.update3dSliderNav();
+    }
+
+    update3dSliderNav() {
+        // Можно оставить пустым или скрыть кнопки при 1 слайде
+    }
+
+    // Переключение слайда продуктов
     goToSlide(index) {
         if (index < 0) index = this.totalSlides - 1;
         if (index >= this.totalSlides) index = 0;
 
-        // Убираем active у всех
         document.querySelectorAll('.slider-slide').forEach(s => s.classList.remove('active'));
         document.querySelectorAll('.slider-dot').forEach(d => d.classList.remove('active'));
 
-        // Добавляем active к нужным
         document.querySelectorAll('.slider-slide')[index]?.classList.add('active');
         document.querySelectorAll('.slider-dot')[index]?.classList.add('active');
 
@@ -229,13 +279,11 @@ renderCompetitorsTable() {
         this.updateSliderNav();
     }
 
-    // Обновление состояния кнопок (для edge cases)
     updateSliderNav() {
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         if (!prevBtn || !nextBtn) return;
 
-        // Если один слайд — кнопки не нужны
         if (this.totalSlides <= 1) {
             prevBtn.style.display = 'none';
             nextBtn.style.display = 'none';
