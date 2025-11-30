@@ -315,3 +315,43 @@ class I18n {
 document.addEventListener('DOMContentLoaded', () => {
     window.motorproI18n = new I18n();
 });
+// Простой слайдер для 3D-модели (без динамической генерации)
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderContainer = document.getElementById('3d-slider');
+    const dotsContainer = document.getElementById('3d-dots');
+    const prevBtn = document.getElementById('3d-prev');
+    const nextBtn = document.getElementById('3d-next');
+
+    if (!sliderContainer || !dotsContainer || !prevBtn || !nextBtn) return;
+
+    const slides = sliderContainer.querySelectorAll('.slider-slide');
+    const dots = dotsContainer.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+
+    function updateSlider() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateSlider();
+        });
+    });
+});
