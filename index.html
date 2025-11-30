@@ -94,19 +94,16 @@
             <div class="container">
                 <h2 class="section-title" data-i18n="product.title">ОПИСАНИЕ КОНЕЧНОГО ПРОДУКТА</h2>
                 <div class="row">
-                    <div class="col-md-6">
-    <div class="chart-container">
-        <div class="product-slider">
-            <div class="slider-container" id="3d-slider"></div>
-            <div class="slider-nav">
-                <button class="slider-btn" id="3d-prev">←</button>
-                <div class="slider-dots" id="3d-dots"></div>
-                <button class="slider-btn" id="3d-next">→</button>
-            </div>
-        </div>
-        <p class="text-center mt-2 text-muted" data-i18n="charts.efficiency_map">3D-модель двигателя</p>
-    </div>
-</div>
+                    <div class="col-lg-6">
+                        <!-- Слайдер продуктов -->
+                        <div class="product-slider">
+                            <div class="slider-container" id="slider-container"></div>
+                            <div class="slider-nav">
+                                <button class="slider-btn" id="prev-btn">←</button>
+                                <div class="slider-dots" id="slider-dots"></div>
+                                <button class="slider-btn" id="next-btn">→</button>
+                            </div>
+                        </div>
                         <!-- Дисклеймер под слайдером -->
                         <div class="mt-3">
                             <p class="small" style="font-size: 0.8rem; color: #6c757d;" data-i18n="product.disclaimer">
@@ -181,10 +178,16 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <!-- СЛАЙДЕР 3D-МОДЕЛИ -->
                         <div class="chart-container">
-                            <img src="assets/images/charts/3d-model.png" loading="lazy"
-                                 alt="3D-модель двигателя"
-                                 class="img-fluid rounded shadow" style="max-height: 300px;">
+                            <div class="product-slider">
+                                <div class="slider-container" id="3d-slider"></div>
+                                <div class="slider-nav">
+                                    <button class="slider-btn" id="3d-prev">←</button>
+                                    <div class="slider-dots" id="3d-dots"></div>
+                                    <button class="slider-btn" id="3d-next">→</button>
+                                </div>
+                            </div>
                             <p class="text-center mt-2 text-muted" data-i18n="charts.efficiency_map">3D-модель двигателя</p>
                         </div>
                     </div>

@@ -66,7 +66,7 @@ class I18n {
         // Рендер динамических секций
         this.renderProducts();
         this.renderCompetitorsTable();
-        this.render3dSlider(); // ← НОВЫЙ СЛАЙДЕР
+        this.render3dSlider(); // ← ЕДИНСТВЕННЫЙ СЛАЙДЕР 3D
 
         // Обновление кнопок выбора языка
         document.querySelectorAll('.lang-switcher button').forEach(btn => {
@@ -82,7 +82,6 @@ class I18n {
             }
         });
 
-        // Сохранение в localStorage
         localStorage.setItem('motorpro-lang', this.currentLang);
     }
 
@@ -101,12 +100,10 @@ class I18n {
             return;
         }
 
-        // Генерируем слайды
         container.innerHTML = '';
         dotsContainer.innerHTML = '';
 
         products.forEach((product, index) => {
-            // Создаём слайд
             const slide = document.createElement('div');
             slide.className = 'slider-slide';
             if (index === 0) slide.classList.add('active');
@@ -127,7 +124,6 @@ class I18n {
             `;
             container.appendChild(slide);
 
-            // Создаём точку
             const dot = document.createElement('div');
             dot.className = 'slider-dot';
             if (index === 0) dot.classList.add('active');
@@ -135,15 +131,12 @@ class I18n {
             dotsContainer.appendChild(dot);
         });
 
-        // Сохраняем состояние слайдера в экземпляре
         this.currentSlide = 0;
         this.totalSlides = products.length;
 
-        // Обработчики кнопок
         prevBtn.onclick = () => this.goToSlide(this.currentSlide - 1);
         nextBtn.onclick = () => this.goToSlide(this.currentSlide + 1);
 
-        // Обновляем кнопки
         this.updateSliderNav();
     }
 
@@ -172,7 +165,6 @@ class I18n {
                        this.currentLang === 'zh' ? 'zh-CN' : 'en-US';
         const fmt = new Intl.NumberFormat(locale);
 
-        // Начинаем строить HTML
         let html = '<thead><tr>';
         html += `<th>${this.getTranslation('competitors.parameter')}</th>`;
         products.forEach(p => {
@@ -188,13 +180,10 @@ class I18n {
                 if (val == null) {
                     html += '<td>—</td>';
                 } else if (param === 'efficiency') {
-                    // Для КПД оставляем как есть (уже с % в данных)
                     html += `<td>${val}</td>`;
                 } else if (typeof val === 'number') {
-                    // Форматируем числа (но без единиц!)
                     html += `<td>${fmt.format(val)}</td>`;
                 } else {
-                    // dimensions и другие строки
                     html += `<td>${val}</td>`;
                 }
             });
@@ -205,7 +194,7 @@ class I18n {
         tableEl.innerHTML = html;
     }
 
-    // === НОВЫЙ СЛАЙДЕР: 3D-МОДЕЛЬ ===
+    // === ЕДИНСТВЕННЫЙ СЛАЙДЕР: 3D-МОДЕЛЬ В РЕЗУЛЬТАТАХ ===
     render3dSlider() {
         const container = document.getElementById('3d-slider');
         const dotsContainer = document.getElementById('3d-dots');
@@ -214,36 +203,39 @@ class I18n {
         
         if (!container || !dotsContainer || !prevBtn || !nextBtn) return;
 
-        // Количество изображений (измени при необходимости)
-        const imageCount = 4;
-        const basePath = 'assets/images/3d/3d-';
+        // Список имён файлов (ты просто кладёшь их в папку)
+        const imageFiles = [
+            '3d-main.jpg',
+            '3d-side.jpg',
+            '3d-top.jpg',
+            '3d-detail.jpg'
+        ];
 
-        // Генерация слайдов
+        const basePath = 'assets/images/3d/';
+
         container.innerHTML = '';
         dotsContainer.innerHTML = '';
 
-        for (let i = 1; i <= imageCount; i++) {
+        imageFiles.forEach((file, index) => {
             const slide = document.createElement('div');
             slide.className = 'slider-slide';
-            if (i === 1) slide.classList.add('active');
+            if (index === 0) slide.classList.add('active');
 
-            slide.innerHTML = `<img src="${basePath}${i}.jpg" alt="3D-вид ${i}" class="img-fluid">`;
+            slide.innerHTML = `<img src="${basePath}${file}" alt="3D-вид ${index + 1}" class="img-fluid">`;
             container.appendChild(slide);
 
             const dot = document.createElement('div');
             dot.className = 'slider-dot';
-            if (i === 1) dot.classList.add('active');
-            dot.addEventListener('click', () => this.goTo3dSlide(i - 1));
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => this.goTo3dSlide(index));
             dotsContainer.appendChild(dot);
-        }
+        });
 
         this.current3dSlide = 0;
-        this.total3dSlides = imageCount;
+        this.total3dSlides = imageFiles.length;
 
         prevBtn.onclick = () => this.goTo3dSlide(this.current3dSlide - 1);
         nextBtn.onclick = () => this.goTo3dSlide(this.current3dSlide + 1);
-
-        this.update3dSliderNav();
     }
 
     goTo3dSlide(index) {
@@ -257,14 +249,8 @@ class I18n {
         document.querySelectorAll('#3d-dots .slider-dot')[index]?.classList.add('active');
 
         this.current3dSlide = index;
-        this.update3dSliderNav();
     }
 
-    update3dSliderNav() {
-        // Можно оставить пустым или скрыть кнопки при 1 слайде
-    }
-
-    // Переключение слайда продуктов
     goToSlide(index) {
         if (index < 0) index = this.totalSlides - 1;
         if (index >= this.totalSlides) index = 0;
