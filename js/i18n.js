@@ -1,5 +1,5 @@
 // public/js/i18n.js
-// Система интернационализации с поддержкой динамической загрузки контента с сервера и продуктов
+// Система интернационализации + статический слайдер 3D
 
 class I18n {
     constructor() {
@@ -63,10 +63,9 @@ class I18n {
             }
         });
 
-        // Рендер динамических секций
+        // Рендер ДИНАМИЧЕСКИХ секций (продукт, таблица)
         this.renderProducts();
         this.renderCompetitorsTable();
-        this.render3dSlider(); // ← ЕДИНСТВЕННЫЙ СЛАЙДЕР 3D
 
         // Обновление кнопок выбора языка
         document.querySelectorAll('.lang-switcher button').forEach(btn => {
@@ -194,63 +193,6 @@ class I18n {
         tableEl.innerHTML = html;
     }
 
-    // === ЕДИНСТВЕННЫЙ СЛАЙДЕР: 3D-МОДЕЛЬ В РЕЗУЛЬТАТАХ ===
-    render3dSlider() {
-        const container = document.getElementById('3d-slider');
-        const dotsContainer = document.getElementById('3d-dots');
-        const prevBtn = document.getElementById('3d-prev');
-        const nextBtn = document.getElementById('3d-next');
-        
-        if (!container || !dotsContainer || !prevBtn || !nextBtn) return;
-
-        // Список имён файлов (ты просто кладёшь их в папку)
-        const imageFiles = [
-            '3d-main.jpg',
-            '3d-side.jpg',
-            '3d-top.jpg',
-            '3d-detail.jpg'
-        ];
-
-        const basePath = 'assets/images/3d/';
-
-        container.innerHTML = '';
-        dotsContainer.innerHTML = '';
-
-        imageFiles.forEach((file, index) => {
-            const slide = document.createElement('div');
-            slide.className = 'slider-slide';
-            if (index === 0) slide.classList.add('active');
-
-            slide.innerHTML = `<img src="${basePath}${file}" alt="3D-вид ${index + 1}" class="img-fluid">`;
-            container.appendChild(slide);
-
-            const dot = document.createElement('div');
-            dot.className = 'slider-dot';
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => this.goTo3dSlide(index));
-            dotsContainer.appendChild(dot);
-        });
-
-        this.current3dSlide = 0;
-        this.total3dSlides = imageFiles.length;
-
-        prevBtn.onclick = () => this.goTo3dSlide(this.current3dSlide - 1);
-        nextBtn.onclick = () => this.goTo3dSlide(this.current3dSlide + 1);
-    }
-
-    goTo3dSlide(index) {
-        if (index < 0) index = this.total3dSlides - 1;
-        if (index >= this.total3dSlides) index = 0;
-
-        document.querySelectorAll('#3d-slider .slider-slide').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('#3d-dots .slider-dot').forEach(d => d.classList.remove('active'));
-
-        document.querySelectorAll('#3d-slider .slider-slide')[index]?.classList.add('active');
-        document.querySelectorAll('#3d-dots .slider-dot')[index]?.classList.add('active');
-
-        this.current3dSlide = index;
-    }
-
     goToSlide(index) {
         if (index < 0) index = this.totalSlides - 1;
         if (index >= this.totalSlides) index = 0;
@@ -312,46 +254,47 @@ class I18n {
     }
 }
 
+// ЕДИНСТВЕННЫЙ обработчик DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Инициализация локализации
     window.motorproI18n = new I18n();
-});
-// Простой слайдер для 3D-модели (без динамической генерации)
-document.addEventListener('DOMContentLoaded', () => {
+
+    // Инициализация СТАТИЧЕСКОГО слайдера 3D-модели
     const sliderContainer = document.getElementById('3d-slider');
     const dotsContainer = document.getElementById('3d-dots');
     const prevBtn = document.getElementById('3d-prev');
     const nextBtn = document.getElementById('3d-next');
 
-    if (!sliderContainer || !dotsContainer || !prevBtn || !nextBtn) return;
+    if (sliderContainer && dotsContainer && prevBtn && nextBtn) {
+        const slides = sliderContainer.querySelectorAll('.slider-slide');
+        const dots = dotsContainer.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
 
-    const slides = sliderContainer.querySelectorAll('.slider-slide');
-    const dots = dotsContainer.querySelectorAll('.slider-dot');
-    let currentSlide = 0;
-    const totalSlides = slides.length;
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
 
-    function updateSlider() {
-        slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === currentSlide);
-        });
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
-        });
-    }
-
-    prevBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlider();
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlider();
-    });
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateSlider();
         });
-    });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+            });
+        });
+    }
 });
